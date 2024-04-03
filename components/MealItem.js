@@ -29,7 +29,7 @@ const MealItem = ({
         </View>
         <View>
           <Text style={styles.info}>{ingredients}</Text>
-          <Text style={styles.info}>DURATION: {duration} minutes</Text>
+          <Text style={styles.info}> {duration} minutes</Text>
           <Text style={styles.info}>{complexity.toUpperCase()}</Text>
           <Text style={styles.info}>{affordability.toUpperCase()}</Text>
         </View>
