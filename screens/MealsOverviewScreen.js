@@ -23,8 +23,8 @@ const MealsOverviewScreen = ({ route,navigation }) => {
         navigation.navigate("MealDetails",{
             title:itemData.item.title,
             ingredients:itemData.item.ingredients,
-            image:itemData.item.imageUrl  
-
+            image:itemData.item.imageUrl,
+            steps:itemData.item.steps
         })
     }
         return(

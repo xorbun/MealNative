@@ -3,12 +3,14 @@ const MealDetails=({route})=>{
     const title=route.params.title
     const image=route.params.image
     const ingredients=route.params.ingredients
+    const steps=route.params.steps
     return(
         <View style={styles.maelContainer}> 
             <View style={styles.card}>
                 <Text style={styles.title}>{title}</Text>
                 <Image style={styles.image} source={{ uri: image }} />
                 <Text style={styles.ingredients}>{ingredients}</Text>
+                <Text style={styles.ingredients}>{steps}</Text>
             </View>
         </View>
     )
