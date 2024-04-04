@@ -2,7 +2,7 @@ import MealItem from "../components/MealItem";
 import { MEALS } from "../data/dummy-data";
 
 import { View, StyleSheet,FlatList } from "react-native";
-const MealsOverviewScreen = ({ route }) => {
+const MealsOverviewScreen = ({ route,navigation }) => {
   const catId = route.params.categoryId;
   
 
@@ -18,10 +18,17 @@ const MealsOverviewScreen = ({ route }) => {
         complexity:item.complexity,
         affordability:item.affordability,
         imageUrl:item.imageUrl
+    }
+    const DetailHandler=()=>{
+        navigation.navigate("MealDetails",{
+            title:itemData.item.title,
+            ingredients:itemData.item.ingredients,
+            image:itemData.item.imageUrl  
 
+        })
     }
         return(
-            <MealItem {...mealItemProps}/>
+            <MealItem {...mealItemProps} onPress={DetailHandler}/>
         )
   }
   return (
