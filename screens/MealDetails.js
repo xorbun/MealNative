@@ -1,5 +1,6 @@
-import { Text,Image, View,StyleSheet,Platform,ScrollView,Button} from "react-native"
+import { Text,Image, View,StyleSheet,Platform,ScrollView} from "react-native"
 import { useLayoutEffect } from "react"
+import IconButton from "../components/IconButton"
 const MealDetails=({route,navigation})=>{
     const title=route.params.title
     const image=route.params.image
@@ -10,7 +11,7 @@ const MealDetails=({route,navigation})=>{
     }
     useLayoutEffect(()=>{
         navigation.setOptions({headerRight:()=>{
-            return <Button title="add to favorite"onPress={buttonPressHandler}/>
+            return <IconButton onPress={buttonPressHandler}/>
           }})
     },[navigation,buttonPressHandler]);
     return(
