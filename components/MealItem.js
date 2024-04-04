@@ -13,7 +13,7 @@ const MealItem = ({
   complexity,
   affordability,
   imageUrl,
-  onPress
+  onPress,
 }) => {
   return (
     <View style={styles.maelContainer}>
@@ -29,23 +29,23 @@ const MealItem = ({
           <Image style={styles.image} source={{ uri: imageUrl }} />
         </View>
         <View style={styles.info}>
-            <View style={styles.grouppedinfo}>
-                <Text style={styles.desc}>DURAB.</Text>
-                <Text style={styles.text}> {duration} minutes</Text>
-            </View>
-            <View style={styles.grouppedinfo}>
-                <Text style={styles.desc}>COMPLEX.</Text>
-                <Text style={styles.text}>{complexity.toUpperCase()}</Text>
-            </View>
-            <View style={styles.grouppedinfo}>
-                <Text style={styles.desc}>AFFORD.</Text>
-                <Text style={styles.text}>{affordability.toUpperCase()}</Text>
-            </View>
+          <View style={styles.grouppedinfo}>
+            <Text style={styles.desc}>DURAB.</Text>
+            <Text style={styles.text}> {duration} minutes</Text>
+          </View>
+          <View style={styles.grouppedinfo}>
+            <Text style={styles.desc}>COMPLEX.</Text>
+            <Text style={styles.text}>{complexity.toUpperCase()}</Text>
+          </View>
+          <View style={styles.grouppedinfo}>
+            <Text style={styles.desc}>AFFORD.</Text>
+            <Text style={styles.text}>{affordability.toUpperCase()}</Text>
+          </View>
         </View>
       </Pressable>
     </View>
   );
-}
+};
 export default MealItem;
 const styles = StyleSheet.create({
   maelContainer: {
@@ -58,7 +58,6 @@ const styles = StyleSheet.create({
     overflow: Platform.OS === "android" ? "hidden" : "visible",
     marginBottom: 12,
     backgroundColor: "white",
-    
   },
   title: {
     fontSize: 20,
@@ -75,18 +74,18 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   info: {
-   flexDirection:'row'
+    flexDirection: "row",
+    justifyContent: "center",
   },
-  text:{
-    alignItems:'center',
-    justifyContent:'center',
-    fontWeight:'300'
+  text: {
+    
+    fontWeight: "300",
   },
-  desc:{
-    fontWeight:'bold',
+  desc: {
+    fontWeight: "bold",
   },
-  grouppedinfo:{
-        margin:12,
-        alignItems:'center'
-  }
+  grouppedinfo: {
+    margin: 12,
+    
+  },
 });

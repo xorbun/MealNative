@@ -7,6 +7,7 @@ const CategorieScreen = ({ navigation }) => {
     const pressHandler = () => {
       navigation.navigate("MealOverview", {
         categoryId: itemData.item.id,
+        categoryTitle:itemData.item.title,
       });
     };
     return (
