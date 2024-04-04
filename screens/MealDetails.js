@@ -1,13 +1,27 @@
 import { Text,Image, View,StyleSheet,Platform,ScrollView} from "react-native"
 import { useLayoutEffect } from "react"
+import {useSelector,useDispatch} from 'react-redux'
 import IconButton from "../components/IconButton"
+import { addFaorite,removeFavorite } from "../store/redux/favorite"
 const MealDetails=({route,navigation})=>{
+    const favoriteMealIds=useSelector((state)=>state.favoriteMeals.Ids)
+    const dispatch=useDispatch()
+    const id=route.params.id
     const title=route.params.title
     const image=route.params.image
     const ingredients=route.params.ingredients
     const steps=route.params.steps
+    const mealIsFavorite=favoriteMealIds.includes(id)
     const buttonPressHandler=()=>{
-        console.log(title)
+        if(mealIsFavorite) {
+          dispatch(removeFavorite({id:id}))
+          console.log('eliminato',id)
+          console.log(favoriteMealIds)
+        }else{
+          dispatch(addFaorite({id:id}))
+          console.log('aggiunto',id)
+          console.log(favoriteMealIds)
+        }
     }
     useLayoutEffect(()=>{
         navigation.setOptions({headerRight:()=>{

@@ -20,6 +20,7 @@ const MealsOverviewScreen = ({ route, navigation }) => {
     };
     const DetailHandler = () => {
       navigation.navigate("MealDetails", {
+        id:itemData.item.id,
         title: itemData.item.title,
         ingredients: itemData.item.ingredients,
         image: itemData.item.imageUrl,
