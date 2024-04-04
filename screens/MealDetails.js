@@ -10,11 +10,15 @@ const MealDetails=({route})=>{
             <View style={styles.card}>
                 <Text style={styles.title}>{title}</Text>
                 <Image style={styles.image} source={{ uri: image }} />
+                <View style={styles.titleView}>
                 <Text style={styles.title}>INGREDIENTS</Text>
+                </View>
                 {ingredients.map((ingred)=>(
                     <Text style={styles.ingredients} key={ingred}>{ingred}</Text>
                 ))}
+                <View style={styles.titleView}>
                 <Text style={styles.title}>STEPS</Text>
+                </View>
                 {steps.map((step)=>(
                     <Text style={styles.steps} key={step}>-{step}</Text>
                 ))}
@@ -42,15 +46,21 @@ const styles=StyleSheet.create({
       title:{
         fontSize:20,
         fontWeight:'bold',
-        textAlign:'center'
+        textAlign:'center',
+      },
+      titleView:{
+        borderBottomWidth:2,
+        borderBottomColor:'#FBC02D',
+        margin:12
       },
       ingredients:{
         fontSize:15,
-        textAlign:'center'
+        textAlign:'center',
+       
       },
       steps:{
-        marginBottom:2,
-        textAlign:'left'
+        marginBottom:8,
+       
       },
     image: {
         width: "100%",
