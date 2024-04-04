@@ -15,17 +15,15 @@ const MealDetails=({route,navigation})=>{
     const buttonPressHandler=()=>{
         if(mealIsFavorite) {
           dispatch(removeFavorite({id:id}))
-          console.log('eliminato',id)
-          console.log(favoriteMealIds)
+      
         }else{
           dispatch(addFaorite({id:id}))
-          console.log('aggiunto',id)
-          console.log(favoriteMealIds)
+         
         }
     }
     useLayoutEffect(()=>{
         navigation.setOptions({headerRight:()=>{
-            return <IconButton onPress={buttonPressHandler}/>
+            return <IconButton name={mealIsFavorite ? "star":"star-o"} onPress={buttonPressHandler}/>
           }})
     },[navigation,buttonPressHandler]);
     return(

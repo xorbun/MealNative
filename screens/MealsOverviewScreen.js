@@ -35,7 +35,7 @@ const MealsOverviewScreen = ({ route, navigation }) => {
         data={displayedMeals}
         renderItem={renderMeal}
         keyExtractor={(item) => {
-          item.id;
+         return item.id;
         }}
       />
     </View>

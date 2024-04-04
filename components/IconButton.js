@@ -1,9 +1,9 @@
 import { Pressable,StyleSheet } from "react-native"
 import { FontAwesome } from '@expo/vector-icons';
-const IconButton=({onPress})=>{
+const IconButton=({onPress,name})=>{
     return(
         <Pressable onPress={onPress} style={({pressed})=> pressed ? styles.pressed:null}> 
-            <FontAwesome name="star" size={24} color="white" />
+            <FontAwesome name={name} size={24} color="white" />
         </Pressable>
     )
 }

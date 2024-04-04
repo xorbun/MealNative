@@ -2,7 +2,7 @@ import { View,FlatList,StyleSheet } from "react-native"
 import { MEALS } from "../data/dummy-data";
 import {useSelector} from 'react-redux'
 import MealItem from "../components/MealItem";
-const FavoriteScreen=()=>{
+const FavoriteScreen=({route,navigation})=>{
 const favoriteMealsId=useSelector((state)=>state.favoriteMeals.Ids)
 const filterMeals=MEALS.filter((meal)=>favoriteMealsId.includes(meal.id))
 const renderMeal = (itemData) => {
@@ -15,7 +15,16 @@ const renderMeal = (itemData) => {
       affordability: item.affordability,
       imageUrl: item.imageUrl,
     }
-    return <MealItem {...mealItemProps}/>;
+    const DetailHandler = () => {
+        navigation.navigate("MealDetails", {
+          id:itemData.item.id,
+          title: itemData.item.title,
+          ingredients: itemData.item.ingredients,
+          image: itemData.item.imageUrl,
+          steps: itemData.item.steps,
+        });
+      };
+    return <MealItem {...mealItemProps} onPress={DetailHandler}/>;
 }
 return (
     <View style={styles.container}>
