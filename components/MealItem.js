@@ -36,7 +36,7 @@ const MealItem = ({
       </Pressable>
     </View>
   );
-};
+}
 export default MealItem;
 const styles = StyleSheet.create({
   maelContainer: {
